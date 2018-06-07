@@ -22,7 +22,7 @@ First, link to the `d3.js` version 5
 Then add links to all the files in `src`:
 
 ```html
-	<link rel="stylesheet" type="text/css" href="../src/notggplot.css">	
+    <link rel="stylesheet" type="text/css" href="../src/notggplot.css">	
     <script type="text/javascript" src="../src/mergeMapping.js"></script>
     <script type="text/javascript" src="../src/notggplot.js"></script>
     <script type="text/javascript" src="../src/seq.js"></script>

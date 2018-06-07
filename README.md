@@ -80,7 +80,7 @@ Create a scatterplot with `z` on the x-axis and `count` on the y-axis, coloring 
 ```js
 let data=getData();
 
-let plot=new notggplot({mapping:{x:'Date',y:'count',fill:'group'},data:data})
+let plot=new notggplot({mapping:{x:'Date',y:'count',fill:'category'},data:data})
 	.geom_point({size:2});
 
 document.body.appendChild(plot.node());

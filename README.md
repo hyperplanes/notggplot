@@ -7,12 +7,13 @@ Overview
 A javascript graphing library that's not ggplot, offering a high-level, declarative syntax for embedding graphs in webpages using the [d3.js framework](https://d3js.org/). This is a proof-of-concept in early stages of development.
 
 `src` contains the uncompiled css and javascript files for `notggplot`, with one function per file. It does not contain the required `d3.js` framework file.
+
 `test` contains some loosely structured tests. The javascript files each contain one or more tests, while `index.html` links the javascript files. Opening `index.html` in a browser will run the tests and, where appropriate, display the output graphs, while failed tests will throw exceptions in the console.
 
 Installation
 ------------
 
-First, link to the `d3.js` version 5, as well as link all of the javascript and css files in the src folder
+First, link to the `d3.js` version 5
 
 ```html
 <script src="https://d3js.org/d3.v5.min.js"></script>

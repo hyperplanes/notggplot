@@ -1,0 +1,59 @@
+.notgg-geom_line{
+	fill:none;
+	stroke:black;
+	stroke-width:1px;
+}	
+.notgg *{
+	font-family: Arial;
+}
+.notgg-title{
+	font-size: x-large;
+}
+.notgg-axis line{
+    stroke-width:1px;
+}
+.notgg-axis{
+    font-size:10pt;
+    stroke-width:0px;
+}
+.notgg-grid line{
+	stroke-width:1px;
+    stroke:#FFFFFF;
+}
+.notgg-grid path{
+	stroke-width:0px;
+    stroke:#FFFFFF;
+}
+.notgg-plotarea-background{
+	fill: lightgrey;
+}
+.notgg-axisLab{
+	font-size: large;
+}
+.notgg{
+	width:500px;
+}
+.notgg-twodash{
+	stroke-dasharray: 5 5 15 5;
+}
+.notgg-solid{
+	stroke-dasharray: none;
+}
+.notgg-longdash{
+	stroke-dasharray: 15 5;
+}
+.notgg-dotted{
+	stroke-dasharray: 2 5;
+}
+.notgg-dotdash{
+	stroke-dasharray: 2 5 15 5;
+}
+.notgg-dashed{
+	stroke-dasharray: 5 5;
+}
+.warning{
+	fill:orangered;
+}
+.notgg-legend{
+	fill: transparent;
+}

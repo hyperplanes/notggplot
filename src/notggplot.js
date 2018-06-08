@@ -3,8 +3,8 @@ function notggplot(globalargument) {
 	if(typeof globalargument==='undefined'){
 		globalargument={};
 	}
-	if(!('todo' in globalargument)){
-		globalargument.todo=[];
+	if(!('layers' in globalargument)){
+		globalargument.layers=[];
 	}
 	if(!('datasets' in globalargument)){
 		globalargument.datasets=[];
@@ -45,7 +45,7 @@ function notggplot(globalargument) {
 		if('fill' in levels){
 			internal.padding.right=d3.max(levels['fill'],d=>d.length)*10+30;
 		}
-		internal.todo.push({
+		internal.layers.push({
 			zindex:0,
 			fn:function(svg,internal){
 
@@ -60,7 +60,7 @@ function notggplot(globalargument) {
 				.attr("height", d=>internal.yScale(0)-internal.yScale(d.y))
 				.classed('geom_col',true);
 				
-				fillAesthetic(svg,internal,levels,circles,mapping);
+				fillAesthetic(svg,internal,levels,circles,args,"rect");
 			}
 		});		
 
@@ -99,7 +99,7 @@ function notggplot(globalargument) {
 		if(!('size' in args)){
 			args.size=1;
 		}
-		internal.todo.push({
+		internal.layers.push({
 			zindex:0,
 			fn:function(svg,internal){
 
@@ -113,7 +113,7 @@ function notggplot(globalargument) {
 				.attr("r", 2*args.size)
 				.classed('geom_point',true);
 
-				fillAesthetic(svg,internal,levels,circles,mapping);
+				fillAesthetic(svg,internal,levels,circles,args,"circle");
 			}
 		});
 		return new notggplot(internal);

@@ -26,7 +26,16 @@ function getData(){
 
 	document.body.appendChild(plot.node());
 })();
+(function() {
+	'use strict';
 
+	let data=getData();
+
+	let plot=new notggplot({mapping:{x:'Date',y:'count',fill:'category'},data:data})
+		.geom_point({size:6});
+
+	document.body.appendChild(plot.node());
+})();
 
 (function() {
 	'use strict';

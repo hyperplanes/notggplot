@@ -1,5 +1,6 @@
-function fillAesthetic(svg,internal,levels,circles,mapping){
+function fillAesthetic(svg,internal,levels,circles,args,shape){
 	if('fill' in levels){
+		let mapping=args.mapping;
 		let fillScale=d3.scaleSequential(d3.interpolateRainbow)
 		.domain([0,levels.fill.length]);
 		circles.attr("fill",d=>fillScale(levels.fill.indexOf(d.fill)));
@@ -12,15 +13,25 @@ function fillAesthetic(svg,internal,levels,circles,mapping){
 		.attr("text-anchor", "middle")
 		.attr('class', 'notgg-axisLab')
 		.text(mapping['fill']);
-		svg.selectAll('.notgg-legend-fill')
+		let shapes=svg.selectAll('.notgg-legend-fill')
 		.data(levels.fill)
-		.enter()
-		.append('rect')
-		.attr('x',d=>internal.width-internal.padding.right+2)
-		.attr('y',(d,i)=>legendTop+28*(i+1))
-		.attr('width',24)
-		.attr('height',24)
-		.attr("fill",d=>fillScale(levels.fill.indexOf(d)))
+		.enter();
+		switch(shape){
+			case 'rect':
+				shapes=shapes.append('rect')
+				.attr('x',d=>internal.width-internal.padding.right+2)
+				.attr('y',(d,i)=>legendTop+28*(i+1))
+				.attr('width',24)
+				.attr('height',24);
+				break;
+			case 'circle':
+				shapes=shapes.append("circle")
+				.attr("cx", d=>internal.width-internal.padding.right+24-2*args.size)
+				.attr("cy", (d,i)=>legendTop+12+28*(i+1))
+				.attr("r", 2*args.size);
+				break;
+		}
+		shapes.attr("fill",d=>fillScale(levels.fill.indexOf(d)))
 		.classed('notgg-legend-fill',true);
 
 		svg.selectAll('.notgg-legend-key')

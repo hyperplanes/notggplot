@@ -33,8 +33,8 @@ function makePlot(internal){
 		make_majorGrid(svg,internal);
 	}
 
-	internal.todo.sort((x,y)=>x.zindex-y.zindex);
-	internal.todo.forEach(x=>x.fn(svg,internal));
+	internal.layers.sort((x,y)=>x.zindex-y.zindex);
+	internal.layers.forEach(x=>x.fn(svg,internal));
 
 	makeAxis(svg,internal);
 	makeLegend(svg,internal);

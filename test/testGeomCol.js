@@ -22,10 +22,6 @@ function getData2(){
 (function() {
 	'use strict';
 
-	//possible data types: categorical, numeric, date
-
-	//test bar chart with categorical data
-
 	let data=getData2();
 
 	let plot=new notggplot({mapping:{x:'group',y:'count',fill:'category'},data:data})
@@ -35,10 +31,6 @@ function getData2(){
 })();
 (function() {
 	'use strict';
-
-	//possible data types: categorical, numeric, date
-
-	//test bar chart with categorical data
 
 	let data=getData();
 
@@ -50,10 +42,6 @@ function getData2(){
 
 (function() {
 	'use strict';
-
-	//possible data types: categorical, numeric, date
-
-	//test bar chart with categorical data
 
 	let data=getData();
 

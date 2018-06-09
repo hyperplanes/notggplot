@@ -212,7 +212,7 @@ function notggplot(globalargument) {
 					}
 					if('size' in levels){
 						let sizes=Rlang.seq({from:1,to:10,length_out:levels["size"].length});
-						let sizeKeys=distinctLevels.map(level=>level.size);
+						let sizeKeys=levels["size"];
 						scales.size=key=>sizes[sizeKeys.indexOf(key)];
 						paths=paths.map((path,i)=>path.style("stroke-width",()=>scales.size(datasets[i][0].size)));
 					}

@@ -50,6 +50,18 @@ let plot=new notggplot({mapping:{x:'Date',y:'count',fill:'category'},data:data})
 document.body.appendChild(plot.node());
 ```
 
+Create a line graph coloring lines by group and using size to indicate category:
+
+```js
+    let data=getData();
+
+    let plot=new notggplot({mapping:{x:'Date',y:'count',colour:'group',size:'category'},data:data})
+        .geom_line();
+
+    document.body.appendChild(plot.node());
+```
+
+
 The `test` files pretty much spell out examples of all of the currently supported use cases. 
 
 Installation

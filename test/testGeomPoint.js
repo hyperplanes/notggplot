@@ -58,3 +58,14 @@ function getData(){
 
 	document.body.appendChild(plot.node());
 })();
+
+(function() {
+	'use strict';
+
+	let data=getData();
+	data.forEach(d=>d.z=Math.random()*20);
+	let plot=new notggplot({mapping:{x:'z',y:'count',colour:'group'},data:data})
+		.geom_point({size:3});
+
+	document.body.appendChild(plot.node());
+})();

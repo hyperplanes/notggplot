@@ -50,3 +50,15 @@ function getData2(){
 
 	document.body.appendChild(plot.node());
 })();
+
+
+(function() {
+	'use strict';
+
+	let data=getData();
+
+	let plot=new notggplot({mapping:{x:'group',y:'count',colour:'group'},data:data})
+		.geom_col();
+
+	document.body.appendChild(plot.node());
+})();

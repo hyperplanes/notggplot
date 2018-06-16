@@ -61,6 +61,7 @@ function notggplot(globalargument) {
 				.classed('geom_col',true);
 				
 				fillAesthetic(svg,internal,levels,circles,args,"rect");
+				colourAesthetic(svg,internal,levels,circles,args,"circle");
 			}
 		});		
 
@@ -114,6 +115,7 @@ function notggplot(globalargument) {
 				.classed('geom_point',true);
 
 				fillAesthetic(svg,internal,levels,circles,args,"circle");
+				colourAesthetic(svg,internal,levels,circles,args,"circle");
 			}
 		});
 		return new notggplot(internal);

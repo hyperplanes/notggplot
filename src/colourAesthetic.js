@@ -17,6 +17,10 @@ function colourAesthetic(svg,internal,levels,circles,args,shape){
 		let shapes=svg.selectAll('.notgg-legend-colour')
 		.data(levels.colour)
 		.enter();
+
+		if(!('size' in args)){
+			args.size=1;
+		}
 		switch(shape){
 			case 'rect':
 				shapes=shapes.append('rect')
